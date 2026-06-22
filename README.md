@@ -15,4 +15,4 @@
   -This handles incoming request and sends response over the internet for classes without this that class is completley ingored by the Spring<br>
 
 **4)@GetMapping("/")** <br>
-  -When i typed localhost:8080 in my browser it sends GET request, so which method holds this mapping will show up in the browser<br?
+  -When i typed localhost:8080 in my browser it sends GET request, so which method holds this mapping will show up in the browser?<br>
