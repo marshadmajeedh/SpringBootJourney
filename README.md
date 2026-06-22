@@ -4,7 +4,7 @@
 **1)What spring boot actually is ?** <br>
   -it consist of Dependency injection,Web,data and security<br>
   -it has auto configuration so i dont have to manually do it<br>
-  -it has embedded tomcat server that run inseid my JAR (Java Archive)<br>
+  -it has embedded tomcat server that run inside my JAR (Java Archive)<br>
 
 **2)Three core concepts** <br>
   -Dependency injection<br>
