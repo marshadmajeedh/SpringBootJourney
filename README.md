@@ -54,4 +54,4 @@
   **3) Connected my backend to a permenent database(PostgreSQL)** <br>
 
   **4) @Service** <br>
-    - Tell spring this class contains business logics.<br>
+    - Tells spring this class contains business logics.<br>
