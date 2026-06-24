@@ -7,41 +7,31 @@ import java.util.List;
 @RestController
 public class HelloController {
 
-    private final TaskRepository taskRepository;
+    private final HelloService helloService;
 
-    public HelloController(TaskRepository taskRepository) {
-        this.taskRepository = taskRepository;
+    public HelloController(HelloService helloService) {
+        this.helloService = helloService;
     }
-    @GetMapping("/")
-    public String hello(){
-        return "Hello World!";
-    }
-
-    @GetMapping("/about")
-    public String about(){
-        return "First springboot class";
-    }
-
     @PostMapping("/tasks")
     public Task addTask(@RequestBody Task task){
-        return taskRepository.save(task);
+        return helloService.addTask(task);
     }
 
     @GetMapping("/tasks")
     public List<Task> getTasks(){
-       return taskRepository.findAll();
+       return helloService.getAllTasks();
     }
 
     @DeleteMapping("/tasks/{id}")
     public String deleteTask(@PathVariable Long id){
-        taskRepository.deleteById(id);
+        helloService.deleteTask(id);
         return "Task "+id+" deleted successfully";
     }
 
     @PutMapping("/tasks/{id}")
     public String updateTask(@PathVariable Long id,@RequestBody Task task){
         task.setId(id);
-        taskRepository.save(task);
+        helloService.updateTask(id,task);
         return "Task "+id+" updated successfully";
     }
 }
