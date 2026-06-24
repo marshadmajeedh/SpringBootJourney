@@ -1,9 +1,6 @@
 package com.marshad.hellospring;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,5 +30,18 @@ public class HelloController {
     @GetMapping("/tasks")
     public List<Task> getTasks(){
        return taskRepository.findAll();
+    }
+
+    @DeleteMapping("/tasks/{id}")
+    public String deleteTask(@PathVariable Long id){
+        taskRepository.deleteById(id);
+        return "Task "+id+" deleted successfully";
+    }
+
+    @PutMapping("/tasks/{id}")
+    public String updateTask(@PathVariable Long id,@RequestBody Task task){
+        task.setId(id);
+        taskRepository.save(task);
+        return "Task "+id+" updated successfully";
     }
 }

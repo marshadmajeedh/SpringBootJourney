@@ -42,7 +42,6 @@ public class Task {
     public void setPriority(String priority) {
         this.priority = priority;
     }
-    public long getId() {
-        return id;
-    }
+    public long getId() {return id;}
+    public void setId(long id) {this.id = id;}
 }

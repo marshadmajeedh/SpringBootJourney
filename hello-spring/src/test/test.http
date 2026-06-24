@@ -48,7 +48,19 @@ Content-Type:application/json
 
 {
   "title": "JAVA",
-  "completed": true,
+  "completed": false,
   "priority": "HIGH"
 }
 
+###
+DELETE http://localhost:8080/tasks/1
+
+###
+PUT http://localhost:8080/tasks/5
+Content-Type: application/json
+
+{
+  "title": "JAVA-Done",
+  "completed": true,
+  "priority": "HIGH"
+}
