@@ -17,6 +17,7 @@ public class HelloService {
     }
 
     public void deleteTask(Long id) {
+        Validation.validId(id,tRepository);
         tRepository.deleteById(id);
     }
 

@@ -30,7 +30,6 @@ public class HelloController {
 
     @PutMapping("/tasks/{id}")
     public String updateTask(@PathVariable Long id,@RequestBody Task task){
-        task.setId(id);
         helloService.updateTask(id,task);
         return "Task "+id+" updated successfully";
     }
