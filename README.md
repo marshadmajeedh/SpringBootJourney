@@ -87,5 +87,3 @@
 
   **10) PasswordEncoder** <br>
     - Take user's plain password and convert into Hashing.<br>
-
-  **11) 
