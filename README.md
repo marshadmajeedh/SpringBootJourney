@@ -50,3 +50,8 @@
     - Handles UPDATE request.<br>
     - 2 parameters(@PathVariable uniqueIdentifier, @RequestBody Object object).<br>
     - before saving , object.setUniqueIdentifier(uniqueIdentifier).<br>
+
+  **3) Connected my backend to a permenent database(PostgreSQL)** <br>
+
+  **4) @Service** <br>
+    - Tells spring this class contains business logics.<br>
