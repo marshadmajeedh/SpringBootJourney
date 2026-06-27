@@ -1,4 +1,4 @@
-package com.marshad.hellospring;
+package com.marshad.hellospring.exception;
 
 public class TaskNotFoundException extends RuntimeException{
 

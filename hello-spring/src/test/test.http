@@ -53,10 +53,19 @@ Content-Type:application/json
 }
 
 ###
-DELETE http://localhost:8080/tasks/999
+POST http://localhost:8080/tasks
+Content-Type: application/json
+
+{
+  "title": "",
+  "completed": false,
+  "priority": "Medium"
+}
+###
+DELETE http://localhost:8080/tasks/999s
 
 ###
-PUT http://localhost:8080/tasks/5
+PUT http://localhost:8080/tasks/999
 Content-Type: application/json
 
 {

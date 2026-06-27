@@ -1,5 +1,8 @@
-package com.marshad.hellospring;
+package com.marshad.hellospring.controller;
 
+import com.marshad.hellospring.model.Task;
+import com.marshad.hellospring.service.HelloService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,7 +16,7 @@ public class HelloController {
         this.helloService = helloService;
     }
     @PostMapping("/tasks")
-    public Task addTask(@RequestBody Task task){
+    public Task addTask(@Valid @RequestBody Task task){
         return helloService.addTask(task);
     }
 

@@ -1,5 +1,8 @@
-package com.marshad.hellospring;
+package com.marshad.hellospring.service;
 
+import com.marshad.hellospring.model.Task;
+import com.marshad.hellospring.repository.TaskRepository;
+import com.marshad.hellospring.util.Validation;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -22,6 +25,7 @@ public class HelloService {
     }
 
     public void updateTask(Long id,Task task) {
+        Validation.validId(id,tRepository);
         task.setId(id);
         tRepository.save(task);
     }
