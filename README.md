@@ -98,4 +98,4 @@
    - A class that has this annotation, implements method inside it exactly one and returns the instance and stores it in a centralized memory pool. <br>
 
  **2) CommandLineRunner** <br>
-   - A interface that runs code automatically when the spring boot application runs. <br>
+   - A interface that runs code automatically when the spring boot application runs (for now i think, this is used for testing when there is no web interface). <br>
