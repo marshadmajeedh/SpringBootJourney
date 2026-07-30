@@ -99,3 +99,6 @@
 
  **2) CommandLineRunner** <br>
    - A interface that runs code automatically when the spring boot application runs (for now i think, this is used for testing when there is no web interface). <br>
+
+ **3) Object**<br>
+   - Catches every type of data. <br>
