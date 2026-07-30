@@ -91,3 +91,8 @@
 
 # Day Five
  **1) Reviewed the code** <br>
+
+
+# Day Six
+ **1) @Configuration** <br>
+   - A class that has this annotation, implements method inside it exactly one and returns the instance and stores it in a centralized memory pool
