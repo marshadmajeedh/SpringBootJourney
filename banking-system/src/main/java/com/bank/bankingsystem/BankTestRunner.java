@@ -1,7 +1,5 @@
 package com.bank.bankingsystem;
 
-import com.bank.bankingsystem.entity.CurrentAccount;
-import com.bank.bankingsystem.entity.SavingsAccount;
 import com.bank.bankingsystem.service.CurrentBankService;
 import com.bank.bankingsystem.service.FixedDepositBankService;
 import com.bank.bankingsystem.service.SavingBankService;

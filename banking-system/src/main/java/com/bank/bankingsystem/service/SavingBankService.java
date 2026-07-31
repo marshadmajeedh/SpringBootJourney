@@ -15,24 +15,14 @@ public class SavingBankService {
     }
 
     public void deposit (double depositAmount) {
-        try {
-            Validation.validateDepositAmount(depositAmount);
-            savingsAccount.setBalance(savingsAccount.getBalance() + depositAmount);
-            System.out.println("Deposited " + depositAmount+", current balance is " + savingsAccount.getBalance());
-        }catch(DepositAmountLessThanZeroException e) {
-            System.out.println(e.getMessage());
-        }
+        Validation.validateDepositAmount(depositAmount);
+        savingsAccount.setBalance(savingsAccount.getBalance() + depositAmount);
+        System.out.println("Deposited " + depositAmount+", current balance is " + savingsAccount.getBalance());
     }
 
     public void withdraw (double withdrawAmount) {
-        try {
-            savingsAccount.validateWithdraw(withdrawAmount);
-            savingsAccount.withdraw(withdrawAmount);
-
-        }catch(BalanceLessThanMinimumBalanceException | NotMaturedEnoughToWithdrawException |
-               OverDraftAmountIsInSufficientException | OverDraftAndBalanceAreInSufficientException | WithdrawAmountGreaterThanBalanceException e){
-            System.out.println("Transaction failed : "+e.getMessage());
-        }
+        savingsAccount.validateWithdraw(withdrawAmount);
+        savingsAccount.withdraw(withdrawAmount);
     }
 
     public void calculateAnnualInterest() {

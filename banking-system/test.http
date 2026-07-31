@@ -1,30 +1,30 @@
 ### Get account summary of savings account
-GET http://localhost:60123/api/savings/summary
+GET http://localhost:52493/api/savings/summary
 Accept: application/json
 
 ### Get account summary of current account
-GET http://localhost:60123/api/current/summary
+GET http://localhost:56671/api/current/summary
 Accept: application/json
 
 ### Get account summary of fixed deposit account
-GET http://localhost:60123/api/fixeddeposit/summary
+GET http://localhost:56671/api/fixeddeposit/summary
 Accept: application/json
 
 
 ### Post deposit for savings account
-POST http://localhost:50470/api/savings/deposit
+POST http://localhost:63223/api/savings/deposit
 Content-Type: application/json
 
 {
-    "amount":500
+    "amount": -1
 }
 
 ### Post deposit for current account
-POST http://localhost:60123/api/current/deposit
+POST http://localhost:56671/api/current/deposit
 Content-Type: application/json
 
 {
-    "amount":600
+    "amount": 600
 }
 
 ### Post deposit for fixed deposit account
@@ -32,16 +32,16 @@ POST http://localhost:60123/api/fixeddeposit/deposit
 Content-Type: application/json
 
 {
-    "amount":700
+    "amount": 700
 }
 
 
 ### Post withdraw for savings account
-POST http://localhost:50470/api/savings/withdraw
+POST http://localhost:63223/api/savings/withdraw
 Content-Type: application/json
 
 {
-    "amount":400
+    "amount":400000
 }
 
 ### Post withdraw for current account

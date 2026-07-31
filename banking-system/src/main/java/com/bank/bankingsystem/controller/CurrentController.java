@@ -33,7 +33,7 @@ public class CurrentController {
     }
 
     @PostMapping("/deposit")
-    public ResponseEntity<Map<String,Object>> deposit(@RequestParam AmountRequest amount) {
+    public ResponseEntity<Map<String,Object>> deposit(@RequestBody AmountRequest amount) {
         currentBankService.deposit(amount.getAmount());
         CurrentAccount account = currentBankService.getCurrentAccount();
 
@@ -47,7 +47,7 @@ public class CurrentController {
     }
 
     @PostMapping("/withdraw")
-    public ResponseEntity<Map<String,Object>> withdraw(@RequestParam AmountRequest amount) {
+    public ResponseEntity<Map<String,Object>> withdraw(@RequestBody AmountRequest amount) {
         currentBankService.withdraw(amount.getAmount());
         CurrentAccount account = currentBankService.getCurrentAccount();
 

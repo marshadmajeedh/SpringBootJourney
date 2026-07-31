@@ -33,7 +33,7 @@ public class SavingsController {
     }
 
     @PostMapping("/deposit")
-    public ResponseEntity<Map<String,Object>> deposit(@RequestParam AmountRequest amount) {
+    public ResponseEntity<Map<String,Object>> deposit(@RequestBody AmountRequest amount) {
         savingBankService.deposit(amount.getAmount());
         SavingsAccount account = savingBankService.getSavingsAccount();
 
@@ -46,7 +46,7 @@ public class SavingsController {
     }
 
     @PostMapping("/withdraw")
-    public ResponseEntity<Map<String,Object>> getWithdraw(@RequestParam AmountRequest amount) {
+    public ResponseEntity<Map<String,Object>> getWithdraw(@RequestBody AmountRequest amount) {
         savingBankService.withdraw(amount.getAmount());
         SavingsAccount account = savingBankService.getSavingsAccount();
 

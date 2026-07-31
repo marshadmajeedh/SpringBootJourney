@@ -14,24 +14,14 @@ public class FixedDepositBankService {
         this.fixedDepositAccount = fixedDepositAccount;
     }
     public void deposit (double depositAmount) {
-        try {
-            Validation.validateDepositAmount(depositAmount);
-            fixedDepositAccount.setBalance(fixedDepositAccount.getBalance() + depositAmount);
-            System.out.println("Deposited " + depositAmount+", current balance is " + fixedDepositAccount.getBalance());
-        }catch(DepositAmountLessThanZeroException e) {
-            System.out.println(e.getMessage());
-        }
+        Validation.validateDepositAmount(depositAmount);
+        fixedDepositAccount.setBalance(fixedDepositAccount.getBalance() + depositAmount);
+        System.out.println("Deposited " + depositAmount+", current balance is " + fixedDepositAccount.getBalance());
     }
 
     public void withdraw (double withdrawAmount) {
-        try {
-            fixedDepositAccount.validateWithdraw(withdrawAmount);
-            fixedDepositAccount.withdraw(withdrawAmount);
-
-        }catch(BalanceLessThanMinimumBalanceException | NotMaturedEnoughToWithdrawException |
-               OverDraftAmountIsInSufficientException | OverDraftAndBalanceAreInSufficientException | WithdrawAmountGreaterThanBalanceException e){
-            System.out.println("Transaction failed : "+e.getMessage());
-        }
+        fixedDepositAccount.validateWithdraw(withdrawAmount);
+        fixedDepositAccount.withdraw(withdrawAmount);
     }
 
     public void calculateAnnualInterest() {

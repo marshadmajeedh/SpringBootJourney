@@ -34,7 +34,7 @@ public class FixedDepositController {
     }
 
     @PostMapping("/deposit")
-    public ResponseEntity<Map<String,Object>> deposit(@RequestParam AmountRequest amount) {
+    public ResponseEntity<Map<String,Object>> deposit(@RequestBody AmountRequest amount) {
         fixedDepositBankService.deposit(amount.getAmount());
         FixedDepositAccount account = fixedDepositBankService.getFixedDepositAccount();
 
@@ -48,7 +48,7 @@ public class FixedDepositController {
     }
 
     @PostMapping("/withdraw")
-    public ResponseEntity<Map<String,Object>> withdraw(@RequestParam AmountRequest amount) {
+    public ResponseEntity<Map<String,Object>> withdraw(@RequestBody AmountRequest amount) {
         fixedDepositBankService.withdraw(amount.getAmount());
 
         FixedDepositAccount account = fixedDepositBankService.getFixedDepositAccount();

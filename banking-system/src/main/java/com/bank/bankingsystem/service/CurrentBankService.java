@@ -14,24 +14,14 @@ public class CurrentBankService {
         this.currentAccount = currentAccount;
     }
     public void deposit (double depositAmount) {
-        try {
-            Validation.validateDepositAmount(depositAmount);
-            currentAccount.setBalance(currentAccount.getBalance() + depositAmount);
-            System.out.println("Deposited " + depositAmount+", current balance is " + currentAccount.getBalance());
-        }catch(DepositAmountLessThanZeroException e) {
-            System.out.println(e.getMessage());
-        }
+        Validation.validateDepositAmount(depositAmount);
+        currentAccount.setBalance(currentAccount.getBalance() + depositAmount);
+        System.out.println("Deposited " + depositAmount+", current balance is " + currentAccount.getBalance());
     }
 
     public void withdraw (double withdrawAmount) {
-        try {
-            currentAccount.validateWithdraw(withdrawAmount);
-            currentAccount.withdraw(withdrawAmount);
-
-        }catch(BalanceLessThanMinimumBalanceException | NotMaturedEnoughToWithdrawException |
-               OverDraftAmountIsInSufficientException | OverDraftAndBalanceAreInSufficientException | WithdrawAmountGreaterThanBalanceException e){
-            System.out.println("Transaction failed : "+e.getMessage());
-        }
+        currentAccount.validateWithdraw(withdrawAmount);
+        currentAccount.withdraw(withdrawAmount);
     }
 
     public void calculateAnnualInterest() {
