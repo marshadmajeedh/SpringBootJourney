@@ -19,13 +19,13 @@ public class NoteController {
     }
 
     @PostMapping("/notes")
-    public ResponseEntity<NoteResponse> createANote(@RequestBody NoteRequest noteRequest){
+    public ResponseEntity<NoteResponse> createANote(@Valid @RequestBody NoteRequest noteRequest){
         NoteResponse noteResponse = noteService.createNote(noteRequest);
         return ResponseEntity.ok(noteResponse);
     }
 
     @GetMapping("/notes")
-    public ResponseEntity<List<NoteResponse>> getAllTasks(){
+    public ResponseEntity<List<NoteResponse>> getAllNotes(){
         List<NoteResponse> noteResponseList = noteService.getAllNotes();
         return ResponseEntity.ok(noteResponseList);
     }
@@ -42,7 +42,7 @@ public class NoteController {
         return ResponseEntity.ok(noteResponse);
     }
 
-    @DeleteMapping("notes/{id}")
+    @DeleteMapping("/notes/{id}")
     public ResponseEntity<NoteResponse> deleteNoteById(@PathVariable String id){
         NoteResponse noteResponse = noteService.deleteNoteById(id);
         return ResponseEntity.ok(noteResponse);

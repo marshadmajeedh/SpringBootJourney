@@ -1,5 +1,5 @@
 ### Create a note
-POST http://localhost:63404/api/notes
+POST http://localhost:62490/api/notes
 Content-Type: application/json
 
 {
@@ -8,7 +8,7 @@ Content-Type: application/json
 }
 
 ### Create a note
-POST http://localhost:63404/api/notes
+POST http://localhost:62490/api/notes
 Content-Type: application/json
 
 {
@@ -17,7 +17,7 @@ Content-Type: application/json
 }
 
 ### Create a note
-POST http://localhost:63404/api/notes
+POST http://localhost:62490/api/notes
 Content-Type: application/json
 
 {
@@ -26,15 +26,15 @@ Content-Type: application/json
 }
 
 ### Get all notes
-GET http://localhost:63404/api/notes
+GET http://localhost:62490/api/notes
 Accept: application/json
 
 ### Get note by its id
-GET http://localhost:63404/api/notes/3e3e3009-95ad-4924-8063-b20d6f887d4a
+GET http://localhost:62490/api/notes/0e755ad3-9b95-4885-96ea-3e2234a2ef1a
 Accept: application/json
 
 ### Update a note by its id
-PUT http://localhost:63404/api/notes/3e3e3009-95ad-4924-8063-b20d6f887d4a
+PUT http://localhost:62490/api/notes/3e3e3009-95ad-4924-8063-b20d6f887d4a
 Content-Type: application/json
 
 {
@@ -43,5 +43,5 @@ Content-Type: application/json
 }
 
 ### Delete a note by its id
-DELETE http://localhost:63404/api/notes/3e3e3009-95ad-4924-8063-b20d6f887d4a
+DELETE http://localhost:62490/api/notes/3e3e3009-95ad-4924-8063-b20d6f887d4a
 Accept: application/json

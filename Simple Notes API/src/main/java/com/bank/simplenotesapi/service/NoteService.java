@@ -21,7 +21,7 @@ public class NoteService {
     }
 
     //create a note
-    public NoteResponse createNote(@RequestBody NoteRequest noteRequest) {
+    public NoteResponse createNote(NoteRequest noteRequest) {
         Note note = new Note(noteRequest.getTitle(), noteRequest.getContent());
         this.notes.add(note);
 
@@ -42,7 +42,7 @@ public class NoteService {
     }
 
     //get a note by its id
-    public NoteResponse getNoteById(@PathVariable String id) {
+    public NoteResponse getNoteById(String id) {
         Validation.isIDAvailableInTheList(notes,id);
 
         return notes.stream()
@@ -53,7 +53,7 @@ public class NoteService {
     }
 
     //update a note by its id
-    public NoteResponse updateNoteById(@PathVariable String id, @RequestBody NoteRequest noteRequest) {
+    public NoteResponse updateNoteById(String id,NoteRequest noteRequest) {
         Validation.isIDAvailableInTheList(notes,id);
 
         return notes.stream()
@@ -68,7 +68,7 @@ public class NoteService {
     }
 
     //delete a note by its id
-    public NoteResponse deleteNoteById(@PathVariable String id) {
+    public NoteResponse deleteNoteById(String id) {
         Validation.isIDAvailableInTheList(notes,id);
 
         Note noteToDelete = notes.stream()
