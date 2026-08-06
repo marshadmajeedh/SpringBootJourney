@@ -1,5 +1,5 @@
 ### Create a product
-POST http://localhost:62611/api/products
+POST http://localhost:51295/api/products
 Content-Type: application/json
 
 {
@@ -10,7 +10,7 @@ Content-Type: application/json
 }
 
 ### Create a product
-POST http://localhost:62611/api/products
+POST http://localhost:51295/api/products
 Content-Type: application/json
 
 {
@@ -21,15 +21,15 @@ Content-Type: application/json
 }
 
 ### Get all prodcuts
-GET http://localhost:62611/api/products
+GET http://localhost:53923/api/products
 Accept: application/json
 
 ### Get product by its id
-GET http://localhost:62611/api/products/68014142-038c-49fc-a661-c51a0d2b7d69
+GET http://localhost:51295/api/products/68014142-038c-49fc-a661-c51a0d2b7d69
 Accept: application/json
 
 ### Update product by its id
-PUT http://localhost:62611/api/products/68014142-038c-49fc-a661-c51a0d2b7d69
+PUT http://localhost:51295/api/products/68014142-038c-49fc-a661-c51a0d2b7d69
 Content-Type: application/json
 
 {
@@ -40,4 +40,4 @@ Content-Type: application/json
 }
 
 ### Delete product by its id
-DELETE http://localhost:62611/api/products/35db79f3-512a-4798-9c0b-04cee64bda42
+DELETE http://localhost:51295/api/products/35db79f3-512a-4798-9c0b-04cee64bda42

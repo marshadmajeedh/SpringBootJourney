@@ -1,16 +1,25 @@
 package com.bank.simpleproductcatalogapi.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.UUID;
 
+@Entity
 public class Product {
-    private final String id;
+
+    @Id
+    private String id;
     private String name;
     private String description;
     private BigDecimal price;
     private String category;
-    private final Instant createdAt;
+    private Instant createdAt;
+
+    public Product() {
+    }
 
     public Product(String name, String description, BigDecimal price, String category) {
         this.id = UUID.randomUUID().toString();
