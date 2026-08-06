@@ -1,13 +1,13 @@
 package com.bank.simpleaskmanagerapi.controller;
 
+import com.bank.simpleaskmanagerapi.dto.request.TaskRequest;
+import com.bank.simpleaskmanagerapi.dto.response.TaskResponse;
 import com.bank.simpleaskmanagerapi.model.Task;
 import com.bank.simpleaskmanagerapi.service.TaskService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -18,31 +18,32 @@ public class TaskController {
     }
 
     @GetMapping("/tasks")
-    public ResponseEntity<List<Task>> getAllTasks(){
-        List<Task> tasks = taskService.getAllTasks();
-        return ResponseEntity.ok(tasks);
+    public ResponseEntity<List<TaskResponse>> getAllTasks(){
+        List<TaskResponse> responses = taskService.getAllTasks();
+        return ResponseEntity.ok(responses);
     }
 
     @GetMapping("/tasks/{title}")
-    public ResponseEntity<Task> getTask(@PathVariable String title){
-        Task task = taskService.getTaskByTitle(title);
-
-        return ResponseEntity.ok(task);
+    public ResponseEntity<TaskResponse> getTask(@PathVariable String title){
+        TaskResponse taskResponse = taskService.getTaskByTitle(title);
+        return ResponseEntity.ok(taskResponse);
     }
 
     @PutMapping("/tasks/{title}")
-    public ResponseEntity<Task> updateTask(@PathVariable String title){
-        Task task = taskService.getTaskByTitle(title);
-        taskService.updateTaskStatus(task);
-
-        return ResponseEntity.ok(task);
+    public ResponseEntity<TaskResponse> updateTask(@PathVariable String title){
+        TaskResponse taskResponse = taskService.updateTaskStatus(title);
+        return ResponseEntity.ok(taskResponse);
     }
 
     @DeleteMapping("/tasks/{title}")
-    public ResponseEntity<Task> deleteTask(@PathVariable String title){
-        Task task = taskService.getTaskByTitle(title);
-        taskService.deleteTask(task);
+    public ResponseEntity<TaskResponse> deleteTask(@PathVariable String title){
+        TaskResponse taskResponse = taskService.deleteTask(title);
+        return ResponseEntity.ok(taskResponse);
+    }
 
-        return ResponseEntity.ok(task);
+    @PostMapping("/tasks")
+    public ResponseEntity<TaskResponse> createTask(@RequestBody TaskRequest taskRequest){
+        TaskResponse taskResponse = taskService.createTask(taskRequest);
+        return ResponseEntity.ok(taskResponse);
     }
 }
