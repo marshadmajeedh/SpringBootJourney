@@ -1,0 +1,43 @@
+### Create a product
+POST http://localhost:62611/api/products
+Content-Type: application/json
+
+{
+  "name": "Fried rice",
+  "category": "Mains",
+  "description": "Eat this and be full",
+  "price": 500.0
+}
+
+### Create a product
+POST http://localhost:62611/api/products
+Content-Type: application/json
+
+{
+  "name": "Kottu",
+  "category": "Mains",
+  "description": "Eat this and get gas strike",
+  "price": 600.0
+}
+
+### Get all prodcuts
+GET http://localhost:62611/api/products
+Accept: application/json
+
+### Get product by its id
+GET http://localhost:62611/api/products/68014142-038c-49fc-a661-c51a0d2b7d69
+Accept: application/json
+
+### Update product by its id
+PUT http://localhost:62611/api/products/68014142-038c-49fc-a661-c51a0d2b7d69
+Content-Type: application/json
+
+{
+  "name": "Cheese kottu",
+  "category": "Mains",
+  "description": "Eat this and pay 1200",
+  "price": 1200
+}
+
+### Delete product by its id
+DELETE http://localhost:62611/api/products/35db79f3-512a-4798-9c0b-04cee64bda42
