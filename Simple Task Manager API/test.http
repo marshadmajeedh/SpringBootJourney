@@ -1,21 +1,21 @@
 ### Get All tasks
-GET http://localhost:58866/api/tasks
+GET http://localhost:63956/api/tasks
 Accept: application/json
 
 ### Create a task
-POST http://localhost:58866/api/tasks
+POST http://localhost:63956/api/tasks
 Content-Type: application/json
 
 {
-  "title": "Marshad",
-  "description": "Nice task"
+  "title": "Ahamed",
+  "description": "task1"
 }
 
 ### Update a task
-PUT localhost:58866/api/tasks/Marshad
+PUT http://localhost:63956/api/tasks/Marshad
 Accept: application/json
 
 
 ### Delete a task
-DELETE localhost:58866/api/tasks/Marshad
+DELETE http://localhost:63956/api/tasks/Marshad
 Accept: application/json

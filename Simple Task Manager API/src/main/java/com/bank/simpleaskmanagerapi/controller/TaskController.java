@@ -4,6 +4,7 @@ import com.bank.simpleaskmanagerapi.dto.request.TaskRequest;
 import com.bank.simpleaskmanagerapi.dto.response.TaskResponse;
 import com.bank.simpleaskmanagerapi.model.Task;
 import com.bank.simpleaskmanagerapi.service.TaskService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,7 +43,7 @@ public class TaskController {
     }
 
     @PostMapping("/tasks")
-    public ResponseEntity<TaskResponse> createTask(@RequestBody TaskRequest taskRequest){
+    public ResponseEntity<TaskResponse> createTask(@Valid @RequestBody TaskRequest taskRequest){
         TaskResponse taskResponse = taskService.createTask(taskRequest);
         return ResponseEntity.ok(taskResponse);
     }
