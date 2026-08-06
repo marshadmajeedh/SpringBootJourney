@@ -1,0 +1,47 @@
+### Create a note
+POST http://localhost:63404/api/notes
+Content-Type: application/json
+
+{
+  "title": "Local host1",
+  "content": "Welcome to the Task Management API running on localhost. Use the provided endpoints to create, read, update, and delete tasks."
+}
+
+### Create a note
+POST http://localhost:63404/api/notes
+Content-Type: application/json
+
+{
+  "title": "Local host2",
+  "content": "1Welcome to the Task Management API running on localhost. Use the provided endpoints to create, read, update, and delete tasks."
+}
+
+### Create a note
+POST http://localhost:63404/api/notes
+Content-Type: application/json
+
+{
+  "title": "Local host3",
+  "content": "Welcome to the Task Management API running on localhost. Use the provided endpoints to create, read, update, and delete tasks."
+}
+
+### Get all notes
+GET http://localhost:63404/api/notes
+Accept: application/json
+
+### Get note by its id
+GET http://localhost:63404/api/notes/3e3e3009-95ad-4924-8063-b20d6f887d4a
+Accept: application/json
+
+### Update a note by its id
+PUT http://localhost:63404/api/notes/3e3e3009-95ad-4924-8063-b20d6f887d4a
+Content-Type: application/json
+
+{
+  "title": "International host",
+  "content": "read, update"
+}
+
+### Delete a note by its id
+DELETE http://localhost:63404/api/notes/3e3e3009-95ad-4924-8063-b20d6f887d4a
+Accept: application/json
